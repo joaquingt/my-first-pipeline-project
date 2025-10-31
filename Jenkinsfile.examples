@@ -1,0 +1,42 @@
+// Example 1: API Pipeline
+@Library('my-pipeline-library') _
+
+myApiPipeline([
+    apiName: 'my-cool-api',
+    apiPort: '3000'
+])
+
+// Example 2: Web App with different port
+// @Library('my-pipeline-library') _
+// myWebAppPipeline([
+//     appName: 'my-webapp',
+//     dockerPort: '8080'
+// ])
+
+// Example 3: Utility pipeline for cleanup
+// @Library('my-pipeline-library') _
+// myUtilityPipeline([
+//     removeVolumes: true
+// ])
+
+// Example 4: Multiple pipelines in sequence
+// @Library('my-pipeline-library') _
+// pipeline {
+//     agent any
+//     stages {
+//         stage('Deploy App') {
+//             steps {
+//                 script {
+//                     myWebAppPipeline([appName: 'frontend', dockerPort: '3001'])
+//                 }
+//             }
+//         }
+//         stage('Deploy API') {
+//             steps {
+//                 script {
+//                     myApiPipeline([apiName: 'backend', apiPort: '3002'])
+//                 }
+//             }
+//         }
+//     }
+// }
